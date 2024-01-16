@@ -139,3 +139,9 @@ meuArrayInfinito.contains("Valor");
 // Limpa a lista
 meuArrayInfinito.clear();
 ```
+
+
+mais em: 
+
+- https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html#ArrayList--
+- https://www.baeldung.com/string/format
