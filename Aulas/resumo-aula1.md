@@ -73,3 +73,69 @@ for (int i = 0; i < 10; i++) {
     System.out.println(i);
 }
 ```
+
+# Compilado 3 - Arrays e Listas
+
+- No Java arrays devem ter um tamanho pré-estabelecido
+
+```java
+// Iniciando com valores! Não preciso informar quantidade.
+String[] meuArray = {"a", "b", "c"};
+
+// Iniciando sem valores! Preciso informar a quantidade de posições
+String[] meuArray = new String[10];
+
+// Agora que temos as posições do array criadas, podemos preencher com informações, usando o índice do array:
+meuArray[0] = "Xablau";
+
+// Posso usar um **for** para percorrer o array, colocando valores nas posições:
+for(int i = 0; i < meuArray.length; i++) {
+    meuArray[i] = "Minha posição é: " + i;
+}
+```
+
+- Para trabalhar com array infinito, em situações onde não sabemos como vai ficar o tamanho do array, podemos trabalhar com a coleção **List** e **ArrayList**.
+
+import java.util.ArrayList;
+import java.util.List;
+
+```java
+class App {
+    public static void main(String[] args) {
+			List<String> meuArrayInfinito = new ArrayList<>(); // Criando o array
+
+			int i = 0;
+			while (i < 5) {
+			    String valorAtual = "Minha posição no array é: " + i;
+			    meuArrayInfinito.add(valorAtual);
+			    i++;
+			}
+			
+			System.out.println(meuArrayInfinito.get(2)); // Pegando um item do array
+
+	}
+}
+```
+
+- OBS: Perceba que diferente do Array comum onde podemos atribuir valor utilizando o =, em coleções usando List, devemos usar o método add para adicionar, e o get para pegar o valor pelo índice.
+
+
+## Outros métodos legais que podem ser usados com o List:
+```java
+List<String> meuArrayInfinito = new ArrayList<>();
+
+// Para saber o tamanho da minha lista
+meuArrayInfinito.size();
+
+// Serve para encontrar o índice a partir do valor
+meuArrayInfinito.indexOf("Valor");
+
+// Verifica se o array está vazio
+meuArrayInfinito.isEmpty();
+
+// Saber se na lista existe determinado valor
+meuArrayInfinito.contains("Valor");
+
+// Limpa a lista
+meuArrayInfinito.clear();
+```
