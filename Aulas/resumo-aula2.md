@@ -170,5 +170,85 @@ public class App {
     }
 }
 ```
+# Compilado 3 - Constructor
 
-# Compilado 3 - COnstructor
+**Busca-se dinamismo**
+
+## Declarando construtor
+Para declarar nosso construtor, devemos criar um método público, sem tipo de retorno, e com o mesmo nome da classe:
+
+```java
+// User.java
+public class User {
+	int age;
+	double height;
+	String name;
+	private String cpf:
+	private String email;
+	String address;
+
+	public User() {
+		// Esse é o construtor da classe
+	}
+}
+```
+
+Como em outras linguagens, o construtor também pode receber parâmetros que serão passados na construção do objeto da classe:
+
+```java
+// User.java
+public class User {
+	int age;
+	double height;
+	String name;
+	private String cpf:
+	private String email;
+	String address;
+
+	public User(String name, String cpf, String email) {
+		this.name = name;
+		this.cpf = cpf;
+		this.email = email;
+	}
+}
+```
+
+```java
+User novoUser = new User("Ana Maia", "033.454.333-29", "ana@gmail.com");
+```
+
+
+No Java, podemos ter multiplos construtores para a nossa classe! Por exemplo, podemos ter um que não recebe nada, e outra que recebe parâmetros. Isso nos permite instanciar nossa classe User com ou sem parâmetros:
+
+```java
+// User.java
+public class User {
+	int age;
+	double height;
+	String name;
+	private String cpf:
+	private String email;
+	String address;
+
+	public User() {
+	}
+
+	public User(String name, String cpf, String email) {
+		this.name = name;
+		this.cpf = cpf;
+		this.email = email;
+	}
+}
+```
+
+### A importância de ter um construtor sem parâmetros pode variar dependendo do contexto e dos requisitos do seu programa. Aqui estão algumas razões pelas quais pode ser útil ter um construtor sem parâmetros:
+
+**Inicialização Padrão**: O construtor sem parâmetros permite a criação de objetos da classe com valores padrão. Se você não fornecer valores específicos durante a criação do objeto, os membros da classe podem ter valores padrão definidos no construtor sem parâmetros.
+
+**Herança**: Se a classe User for estendida por outras classes, o construtor sem parâmetros pode ser necessário para garantir que as subclasses possam ser instanciadas sem a necessidade de fornecer parâmetros específicos na criação.
+
+**Flexibilidade**: O construtor sem parâmetros oferece flexibilidade ao permitir a criação de objetos sem a necessidade de fornecer todos os detalhes imediatamente. Os valores podem ser atribuídos posteriormente por meio dos métodos da classe.
+
+**Serialização e Desserialização**: Se a classe precisar ser serializada (convertida em um formato que pode ser salvo ou transmitido) e desserializada, o construtor sem parâmetros é muitas vezes necessário para a desserialização adequada.
+
+**Injeção de Dependência**: Em certas situações, quando você está trabalhando com frameworks de injeção de dependência ou frameworks de teste, ter um construtor sem parâmetros pode facilitar a criação de instâncias da classe.
