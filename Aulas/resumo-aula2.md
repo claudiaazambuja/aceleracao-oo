@@ -107,4 +107,68 @@ public class App {
 ```
 # Compilado 2 - OO - Encapsulamento
 
+## Encapsulamento
+
+Deve-se prestar atenção no que geralmente não devem ser acessados e nem modificados de forma direta.
+Busca-se privar ou proteger nossos atributos:
+
+```java
+// User.java
+public class User {
+	int age;
+	double height;
+	String name;
+	private String cpf:
+	private String email;
+	String address;
+
+	void growUp() {
+		this.height += 10.0;
+	}
+}
+```
+
+**A boa prática é sempre deixar privados todos os atributos!**
+
+```java
+// User.java
+public class User {
+	int age;
+	double height;
+	String name;
+	private String cpf:
+	private String email;
+	String address;
+
+	public String getCpf() {
+		return this.cpf;
+	}
+
+	public void setCpf(String cpf) {
+		// Além de modificar o atributo, podemos colocar regras aqui.
+		this.cpf = cpf;
+	}
+
+	void growUp() {
+		this.height += 10.0;
+	}
+}
+```
+
+
+```java
+// App.java
+public class App {
+    public static void main(String[] args) {			
+        User novoUsuario = new User();
+				novoUsuario.name = "Joaquim";
+
+				// Funciona
+				novoUsuario.setCpf("343.534.343-33");
+				// Funciona
+        System.out.println(novoUsuario.getCpf());
+    }
+}
+```
+
 # Compilado 3 - COnstructor
